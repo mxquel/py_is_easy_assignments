@@ -10,7 +10,7 @@ artist = 'Snow Patrol'
 album = 'Final Straw'
 b_side = 'Post Punk Progression'
 genre = 'Indie'
-labels = ['Fiction Records', 'Polydor'] #list of record lables
+labels = ['Fiction Records', 'Polydor'] #list of record labels
 producer = 'Jacknife Lee'
 
 # list of attributed writers
