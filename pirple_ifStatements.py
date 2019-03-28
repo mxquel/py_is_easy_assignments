@@ -17,9 +17,9 @@ def check_equality(a, b, c):
 
 
 # test function
-# print(check_equality(3, 3, 100))			# True
-# print(check_equality(1, 4, 7))				# False
-# print(check_equality(600, 8, 600))		# True
+# print(check_equality(3, 3, 100))	# True
+# print(check_equality(1, 4, 7))	# False
+# print(check_equality(600, 8, 600))	# True
 # print(check_equality(600, 8, "600"))	# True
 
 print(check_equality(a=input('First #: '), b=input('Second #: '), c=input('Third #: ')))
