@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------------
-# HOMEWORK #2: IF STATEMENTS
+# HOMEWORK #3: IF STATEMENTS
 # -----------------------------------------------------------------------------------
 '''Create a function that accepts 3 parameters/numbers and checks for equality among them,
 returning True if 2 or more are equal
@@ -23,4 +23,3 @@ def check_equality(a, b, c):
 # print(check_equality(600, 8, "600"))	# True
 
 print(check_equality(a=input('First #: '), b=input('Second #: '), c=input('Third #: ')))
-
