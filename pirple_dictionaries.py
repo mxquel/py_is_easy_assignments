@@ -27,8 +27,8 @@ favorite_song = {
     'lengths in min': {'album': 5.93, 'radio edit': 4.27}
 }
 
-# print where values are strings:
-[print(f"* {key.title()}: {value}") for key, value in favorite_song.items() if isinstance(value, str)]
+# print where values are strings, numbers or tuples:
+[print(f"* {k.title()}: {v}") for k, v in favorite_song.items() if isinstance(v, (str, int, tuple))]
 
 # print where values are lists or dictionaries
-[print(f"* {key.title()}: {', '.join(value)}") for key, value in favorite_song.items() if isinstance(value, (list, dict))]
+[print(f"* {k.title()}: {(', '.join(v)).title()}") for k, v in favorite_song.items() if isinstance(v, (list, dict))]
