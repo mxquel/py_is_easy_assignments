@@ -32,3 +32,43 @@ favorite_song = {
 
 # print where values are lists or dictionaries
 [print(f"* {k.title()}: {(', '.join(v)).title()}") for k, v in favorite_song.items() if isinstance(v, (list, dict))]
+
+
+# ------------------------------- extra -------------------------------
+
+def review_guesses(topic, guess):
+    if favorite_song.get(topic.lower()):
+        entry = favorite_song[topic.lower()]
+
+        if isinstance(entry, dict):
+            if guess in str(entry.values()):
+                return True
+            else:
+                return False
+        elif isinstance(entry, (int, str)):
+            if guess.title() == str(entry):
+                return True
+            else:
+                return False
+        elif isinstance(entry, (list, tuple)) and guess.title() in str(entry):
+            return True
+        else:
+            return False       
+    else:
+        print('This topic is not covered for my favorite song.')
+
+
+
+print(review_guesses(input('Enter the topic: '), input('Enter your guess: ')))
+
+
+
+
+
+
+
+
+
+
+
+
