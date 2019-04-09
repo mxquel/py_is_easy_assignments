@@ -1,26 +1,26 @@
 # -----------------------------------------------------------------------------------
 # HOMEWORK #9: CLASSES
 # -----------------------------------------------------------------------------------
-'''Create a class called Vehicle with 
+'''Create a class called Vehicle with
     methods that allow setting of make, model, year, and weight
-    a needs_maintenance boolean that defaults to False, and 
+    a needs_maintenance boolean that defaults to False, and
     trips_since_maintenance integer that defaults to 0
     a repair method that resets the trips_since_maintenance and needs_maintenance
 
-Make a "Car" class that inherits from Vehicle. It should contain 
+Make a "Car" class that inherits from Vehicle. It should contain
     a method called drive that sets the state of a boolean is_driving to True
     a method called stop that sets the value of is_driving to False
 
-Switching is_driving from True to False should increment the trips_since_maintenance 
+Switching is_driving from True to False should increment the trips_since_maintenance
 counter. When it exceeds 100, the needs_maintenance boolean should be set to True
 
-Create 3 different cars and drive them all a different number of times. Then 
-print out their values for make, model, year, and weight, needs_maintenance, 
+Create 3 different cars and drive them all a different number of times. Then
+print out their values for make, model, year, and weight, needs_maintenance,
 and trips_since_maintenance
 
-extra: Create a Plane class that inherits from Vehicle. Add methods 
-fly and land (similar to drive and stop), but different in one respect: Once the 
-needs_maintenance boolean gets set to True, any attempt at flight should be rejected 
+extra: Create a Plane class that inherits from Vehicle. Add methods
+fly and land (similar to drive and stop), but different in one respect: Once the
+needs_maintenance boolean gets set to True, any attempt at flight should be rejected
 (return False), and an error message printed that the plane can't fly until repaired.
 '''
 
@@ -44,14 +44,14 @@ class Car(Vehicle):
     def __init__(self, make, model, year, weight):
         super(Car, self).__init__(make, model, year, weight)
         self.is_driving = False
-        
+
     def drive(self):
         self.is_driving = True
         self.trips_since_maintenance += 1
 
         if self.trips_since_maintenance > 100:
             self.needs_maintenance = True
-        
+
     def stop(self):
         self.is_driving = False
 
@@ -63,7 +63,7 @@ enzos_ride = Car(make='BMC', model='Mini Cooper', year=1961, weight=686)
 italien_job.drive()
 italien_job.drive()
 herbie.drive()
-enzos_ride.drive
+enzos_ride.drive()
 italien_job.drive()
 italien_job.drive()
 enzos_ride.drive()
@@ -87,7 +87,7 @@ print(f'Enzo is a prolific driver and it is {str(enzos_ride.needs_maintenance).l
 class Plane(Vehicle):
     def __init__(self, make, model, year, weight):
         super().__init__(make, model, year, weight)
-        is_flying = False
+        self.is_flying = False
 
 
     def fly(self):
@@ -111,14 +111,3 @@ ankh_morpork.land()
 print('The Ankh is flying:', ankh_morpork.is_flying)
 ankh_morpork.needs_maintenance = True
 ankh_morpork.fly()
-
-
-
-
-
-
-
-
-
-
-
