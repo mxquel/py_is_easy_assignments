@@ -19,13 +19,12 @@ from string import ascii_lowercase
 from random import randint
 
 
-words = ['unnatural', 'afford', 'program', 'black', 'rhyme', 'zipper', 'porter', 'idiotic', 
-'wooden', 'quirky', 'flood', 'supply', 'machine', 'return', 'cute', 'quince', 'jolly', 'peel', 
+words = ['unnatural', 'afford', 'program', 'black', 'rhyme', 'zipper', 'porter', 'idiotic',
+'wooden', 'quirky', 'flood', 'supply', 'machine', 'return', 'cute', 'quince', 'jolly', 'peel',
 'adjoining', 'flesh', 'mouth', 'suppose', 'arrest', 'hope']
 
 attempts = 7
 remaining_letters = list(ascii_lowercase)
-mode = input('Please enter 1 for single or 2 for two player mode: ')
 
 
 def select_word():
@@ -54,15 +53,18 @@ def make_guess():
 
 # ----------------------------- game play -----------------------------
 
+mode = input('Please enter 1 for single or 2 for two player mode: ')
+
 if mode.strip() == '1':
 	player_two = 'The computer'
 	word = select_word()
 elif mode.strip() == '2':
 	player_two = input('Please enter the name of the player that provides the word: ')
 	word = (input('Please enter your word: ')).lower()
-	
 
 player_one = input('Please enter the name of the guessing player: ')
+
+print('\n' * 30)
 
 field = ['_' for letter in list(word)]
 
@@ -81,6 +83,8 @@ while attempts > 0 and '_' in field:
 		print(turn, 'is not in the word.')
 		attempts -= 1
 
+
+print_field(field)
 
 if '_' not in field:
 	print(f'Congratulations! {player_one} has won.')
